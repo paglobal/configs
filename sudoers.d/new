@@ -1,0 +1,1 @@
+paglobal ALL=(root) NOPASSWD: /home/paglobal/scripts/brhigh.sh, /home/paglobal/scripts/brmid.sh, /home/paglobal/scripts/brlow.sh, /home/paglobal/scripts/inc-br.sh, /home/paglobal/scripts/dec-br.sh

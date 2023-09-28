@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/paglobal/Documents/Project-N/Configs-and-rcs/Vim_Nvim_And_Vifm/vim_and_nvim'
+let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_1='/sys/devices/pci0000:00/0000:00:01.0/0000:01:00.0/drm/card0/card0-LVDS-1/nv_backlight/device'
