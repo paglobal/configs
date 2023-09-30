@@ -157,7 +157,7 @@ vnoremap _ "_
 nnoremap J :m .+1<cr>==
 nnoremap K :m .-2<cr>==
 inoremap <A-j> <esc>:m .+1<cr>==gi
-inoremap <A-k>:m .-2<cr>==gi
+inoremap <A-k> <esc>:m .-2<cr>==gi
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
 

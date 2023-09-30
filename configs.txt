@@ -1,10 +1,30 @@
-jalacritty
+debug adapters
+chrome-debug-adapter
+node-debug-adapter
+firefox-debug-adapter
+go-delve
+java-debug-adapter
+
+fonts
+nerd font - fira code
+nerd font - try jetBrainsMono nerd font
+poppins
+
+fuzzy finding
+silver surfer
+ripgreg
+fd
+
+ctags
+
+alacritty
 alacritty.yml
 
 kitty
 kitty.conf
 
 vim/neovim/vifm
+nvim 0.9.2
 init.vim
 .vimrc
 coc-settings.json
