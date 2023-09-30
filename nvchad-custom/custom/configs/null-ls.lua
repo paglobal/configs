@@ -15,7 +15,8 @@ local opts = {
     b.formatting.stylua,
 
     -- web dev
-    b.diagnostics.eslint,
+    -- disabled because of eslint-lsp
+    -- b.diagnostics.eslint,
     b.formatting.prettier,
   },
   on_attach = function(client, bufnr)

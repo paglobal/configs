@@ -24,8 +24,10 @@ M.mason = {
     -- web dev
     "html-lsp",
     "css-lsp",
+    "astro-language-server",
     "typescript-language-server",
     "eslint-lsp",
+    "marksman",
     "prettier",
     "emmet-language-server",
     "tailwindcss-language-server",
@@ -34,6 +36,7 @@ M.mason = {
 
     -- go
     "gopls",
+    "delve",
   },
 }
 

@@ -8,7 +8,7 @@ M.disabled = {
     ["<C-l>"] = "",
     ["<C-j>"] = "",
     ["<C-k>"] = "",
-},
+  },
   n = {
     -- blankline
     ["<leader>cc"] = "",
@@ -28,7 +28,7 @@ M.disabled = {
     ["<S-tab>"] = "",
     ["<leader>x"] = "",
 
-   -- lspconfig
+    -- lspconfig
     ["K"] = "",
     ["<leader>f"] = "",
     ["<leader>q"] = "",
@@ -55,15 +55,15 @@ M.disabled = {
   v = {
     -- comment
     ["<leader>/"] = "",
-  }
+  },
 }
 
 M.general = {
   i = {
-    ["<A-j>"] = { "<esc> <cmd> m .+1 <CR>==gi", "Move line down"},
-    ["<A-k>"] = { "<esc> <cmd> m .-2 <CR>==gi", "Move line up"},
-    ["jk"] = { "<ESC>", "Enter command mode"},
-    ["kj"] = { "<ESC>", "Enter command mode"},
+    ["<A-j>"] = { "<esc> <cmd> m .+1 <CR>==gi", "Move line down" },
+    ["<A-k>"] = { "<esc> <cmd> m .-2 <CR>==gi", "Move line up" },
+    ["jk"] = { "<ESC>", "Enter command mode" },
+    ["kj"] = { "<ESC>", "Enter command mode" },
   },
   n = {
     -- quite useful
@@ -79,32 +79,28 @@ M.general = {
     ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
 
     -- from previous nvim config
-    ["<leader>x"] = { "<cmd> q! <CR>", "Close"},
-    ["<leader>xx"] = { "<cmd> q! <CR> <cmd> NvimTreeClose <CR> <cmd> q! <CR>", "Quit"},
-    ["<leader>vs"] = { "<cmd> vsplit <CR>", "Vertical Split"},
-    ["<leader>tb"] = { "<cmd> tabnew <CR>", "New tab (with new buffer)"},
-    ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab"},
-    ["<leader>db"] = { "<cmd> cd .. <CR>", "Move back one directory"},
-    ["<leader>dd"] = { "<cmd> cd ~/Documents/ <CR>", "Move to Documents directory"},
-    ["<Tab>"] = { "<cmd> tabnext <CR>", "Goto next tab"},
-    ["<S-Tab>"] = { "<cmd> tabprevious <CR>", "Goto previous tab"},
-    ["J"] = { "<cmd> m .+1 <CR>==", "Move line down"},
-    ["K"] = { "<cmd> m .-2 <CR>==", "Move line up"},
+    ["<leader>x"] = { "<cmd> q! <CR>", "Close" },
+    ["<leader>xx"] = { "<cmd> q! <CR> <cmd> NvimTreeClose <CR> <cmd> q! <CR>", "Quit" },
+    ["<leader>vs"] = { "<cmd> vsplit <CR>", "Vertical Split" },
+    ["<leader>tb"] = { "<cmd> tabnew <CR>", "New tab (with new buffer)" },
+    ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
+    ["<leader>db"] = { "<cmd> cd .. <CR>", "Move back one directory" },
+    ["<leader>dd"] = { "<cmd> cd ~/Documents/ <CR>", "Move to Documents directory" },
+    ["<Tab>"] = { "<cmd> tabnext <CR>", "Goto next tab" },
+    ["<S-Tab>"] = { "<cmd> tabprevious <CR>", "Goto previous tab" },
+    ["J"] = { "<cmd> m .+1 <CR>==", "Move line down" },
+    ["K"] = { "<cmd> m .-2 <CR>==", "Move line up" },
   },
   s = {
-    ["jk"] = { "<ESC>", "Enter command mode"},
-    ["kj"] = { "<ESC>", "Enter command mode"},
+    ["jk"] = { "<ESC>", "Enter command mode" },
+    ["kj"] = { "<ESC>", "Enter command mode" },
   },
   t = {
     ["jk"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
     ["kj"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
   },
   v = {
-    [">"] = { ">gv", "indent"},
-
-    -- mappings for these keys have been set in init.lua due to some complications
-    -- ["J"] = {},
-    -- ["K"] = {},
+    [">"] = { ">gv", "indent" },
   },
 }
 
@@ -227,7 +223,7 @@ M.nvterm = {
       end,
       "Toggle floating term",
     },
-  }
+  },
 }
 
 M.blankline = {

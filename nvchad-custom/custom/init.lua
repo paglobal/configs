@@ -1,16 +1,24 @@
+--
 vim.opt.undofile = false
-vim.cmd("set clipboard^=unnamed,unnamedplus")
+vim.cmd "set clipboard^=unnamed,unnamedplus"
 
--- mappings set here due to complications (refer to mappings.lua, search for keyword "complications")
-vim.cmd("vnoremap J :m '>+1<cr>gv=gv")
-vim.cmd("vnoremap K :m '<-2<cr>gv=gv")
+-- !!! all keybindings set here instead of in `mappings.lua` are done so for convenience sake !!!
 
--- these mappings have also been set here due to a few complications
--- supposed to use `xnoremap` instead of `vnoremap` as stipulated in the comments below but... 
-vim.cmd([[vnoremap <expr> p 'pgv"'.v:register.'y`>']])
-vim.cmd([[vnoremap <expr> P 'Pgv"'.v:register.'y`>']])
--- vim.cmd([[xnoremap <expr> p 'pgv"'.v:register.'y`>']])
--- vim.cmd([[xnoremap <expr> P 'Pgv"'.v:register.'y`>']])
+-- move chunks of selected text up and down in visual mode
+vim.cmd "vnoremap J :m '>+1<cr>gv=gv"
+vim.cmd "vnoremap K :m '<-2<cr>gv=gv"
 
---Global search and replace
-vim.cmd([[nnoremap <leader>gs :%s///gc]])
+-- d, D, c, and C now delete text into the "_" register (black hole) instead of the default register
+-- always explicity yank text before you delete it with these characters to simulate the default behaviour
+-- also, use x to simulate "cut" behaviour for arbitrarily selected text from now on
+vim.cmd [[nnoremap d "_d]]
+vim.cmd [[vnoremap d "_d]]
+vim.cmd [[nnoremap D "_D]]
+vim.cmd [[vnoremap D "_D]]
+vim.cmd [[nnoremap c "_c]]
+vim.cmd [[vnoremap c "_c]]
+vim.cmd [[nnoremap C "_C]]
+vim.cmd [[vnoremap C "_C]]
+
+-- global search and replace
+vim.cmd [[nnoremap <leader>gs :%s///gc]]

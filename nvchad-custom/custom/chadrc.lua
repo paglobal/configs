@@ -1,14 +1,18 @@
 ---@type ChadrcConfig
 local M = {}
 
--- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
-
 M.ui = {
   theme = "ayu_dark",
   theme_toggle = { "gruvbox", "ayu_dark" },
-  hl_override = highlights.override,
-  hl_add = highlights.add,
+  -- these options don't seem to work. maybe check on them later
+  -- hl_override = {
+  --   Comment = {
+  --     italic = true,
+  --   },
+  -- },
+  -- hl_add = {
+  --   NvimTreeOpenedFolderName = { fg = "green", bold = true },
+  -- },
   telescope = { style = "bordered" },
   statusline = {
     theme = "minimal", -- default/vscode/vscode_colored/minimal
