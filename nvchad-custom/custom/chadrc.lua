@@ -42,7 +42,7 @@ vim.cmd [[xnoremap P "1P]]
 local M = {}
 
 M.ui = {
-  theme = "ayu_dark",
+  theme = "gruvchad",
   theme_toggle = { "gruvchad", "ayu_dark" },
   telescope = { style = "bordered" },
   statusline = {

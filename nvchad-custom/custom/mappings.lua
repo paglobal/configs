@@ -78,8 +78,8 @@ M.general = {
     ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
 
     -- from previous nvim config
-    ["<leader>x"] = { "<cmd> q! <CR>", "Close" },
-    ["<leader>xx"] = { "<cmd> q! <CR> <cmd> NvimTreeClose <CR> <cmd> q! <CR>", "Quit" },
+    ["<leader>qw"] = { "<cmd> q! <CR>", "Close" },
+    ["<leader>qa"] = { "<cmd> q! <CR> <cmd> NvimTreeClose <CR> <cmd> q! <CR>", "Quit" },
     ["<leader>vs"] = { "<cmd> vsplit <CR>", "Vertical Split" },
     ["<leader>tb"] = { "<cmd> tabnew <CR>", "New tab (with new buffer)" },
     ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
@@ -137,7 +137,7 @@ M.tabufline = {
     },
 
     -- close buffer + hide terminal buffer
-    ["<leader>q"] = {
+    ["<leader>qb"] = {
       function()
         require("nvchad.tabufline").close_buffer()
       end,
