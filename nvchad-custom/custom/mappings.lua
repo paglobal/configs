@@ -148,11 +148,17 @@ M.tabufline = {
 
 M.lspconfig = {
   n = {
-    ["gh"] = {
+    ["<leader>gh"] = {
       function()
         vim.diagnostic.open_float { border = "rounded" }
       end,
       "Floating diagnostic",
+    },
+    ["gh"] = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      "LSP hover",
     },
     ["<leader>ds"] = {
       function()
