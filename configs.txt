@@ -6,8 +6,8 @@ go-delve
 java-debug-adapter
 
 fonts
+nerd font - jetBrainsMono 
 nerd font - fira code
-nerd font - try jetBrainsMono nerd font
 poppins
 
 fuzzy finding

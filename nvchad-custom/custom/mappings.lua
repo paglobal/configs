@@ -17,7 +17,6 @@ M.disabled = {
     ["<leader>/"] = "",
 
     -- general
-    ["<C-s>"] = "",
     ["<C-h>"] = "",
     ["<C-l>"] = "",
     ["<C-j>"] = "",
@@ -178,6 +177,14 @@ M.telescope = {
 
     -- theme switcher
     ["<leader>ts"] = { "<cmd> Telescope themes <CR>", "Theme switcher" },
+
+    -- find symbols
+    ["<leader>fs"] = {
+      function()
+        require("telescope.builtin").lsp_document_symbols()
+      end,
+      "Find document symbols",
+    },
   },
 }
 
@@ -242,6 +249,17 @@ M.blankline = {
       end,
 
       "Jump to current context",
+    },
+  },
+}
+
+M.gitsigns = {
+  n = {
+    ["<leader>gl"] = {
+      function()
+        package.loaded.gitsigns.toggle_current_line_blame()
+      end,
+      "Toggle current line blame",
     },
   },
 }
