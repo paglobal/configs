@@ -78,11 +78,11 @@ M.general = {
     ["<leader>s"] = { "<cmd> w <CR>", "Save file" },
 
     -- from previous nvim config
-    ["<leader>qw"] = { "<cmd> q! <CR>", "Close" },
-    ["<leader>qa"] = { "<cmd> q! <CR> <cmd> NvimTreeClose <CR> <cmd> q! <CR>", "Quit" },
+    ["<leader>qw"] = { "<cmd> q! <CR>", "Close window" },
+    ["<leader>qa"] = { "<cmd> q! <CR> <cmd> NvimTreeClose <CR> <cmd> q! <CR>", "Close app" },
     ["<leader>vs"] = { "<cmd> vsplit <CR>", "Vertical Split" },
     ["<leader>tb"] = { "<cmd> tabnew <CR>", "New tab (with new buffer)" },
-    ["<leader>tc"] = { "<cmd> tabclose <CR>", "Close tab" },
+    ["<leader>qt"] = { "<cmd> tabclose <CR>", "Close tab" },
     ["<leader>db"] = { "<cmd> cd .. <CR>", "Move back one directory" },
     ["<leader>dd"] = { "<cmd> cd ~/Documents/ <CR>", "Move to Documents directory" },
     ["<Tab>"] = { "<cmd> tabnext <CR>", "Goto next tab" },

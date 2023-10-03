@@ -1,9 +1,14 @@
 --
 vim.api.nvim_set_hl(0, "Comment", {
-  fg = "#333333",
+  fg = "#555555",
   italic = true,
   bold = true,
 })
+
+vim.cmd [[
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
+]]
 --
 -- !!! all keybindings set here instead of in `mappings.lua` are done so for convenience sake !!!
 -- !!! KEYBINDINGS START !!!
