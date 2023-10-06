@@ -41,6 +41,13 @@ function log(log) {
   return "";
 }
 
+function done() {
+  log({
+    text: "done",
+    type: logTypes.SUCCESS,
+  });
+}
+
 async function symlinkConfigs() {
   const consented_config_symlink_filesAndDirs =
     await getConsented_config_symlink_filesAndDirs();
@@ -116,21 +123,16 @@ async function conditionallyCreateDirectoryChainAndAssociatedLogs(
         type: logTypes.WARN,
       });
       fs.ensureDir(currentDirectory);
-      log({
-        text: "done",
-        type: logTypes.SUCCESS,
-      });
+      done();
     }
   }
 }
 
 async function createSymlink(configFileOrDir, symlinkFileOrDir) {
   log({ text: `linking ${configFileOrDir}`, type: logTypes.PASSIVE });
-  await $`ln -s ${configFileOrDir} ${symlinkFileOrDir}`;
-  log({
-    text: "done",
-    type: logTypes.SUCCESS,
-  });
+  const cwd = await $`pwd`;
+  await $`ln -s ${cwd}${configFileOrDir.slice(1)} ${symlinkFileOrDir}`;
+  done();
 }
 
 await symlinkConfigs();
