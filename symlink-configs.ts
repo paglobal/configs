@@ -1,7 +1,5 @@
-#!/usr/bin/env zx
-
 import "zx/globals";
-import config_symlink_filesAndDirs from "./config_symlink_files-and-dirs.mjs";
+import config_symlink_filesAndDirs from "./config_symlink_files-and-dirs.js";
 
 const logTypes = {
   ERROR: {
@@ -24,15 +22,17 @@ const logTypes = {
     prefix: "QUESTION",
     styles: [],
   },
-};
+} as const;
 
-function log(log) {
+type Log = { text: string; type: (typeof logTypes)[keyof typeof logTypes] };
+
+function log(log: Log) {
   const {
     text,
     type: { prefix, styles },
   } = log;
   let compositeStyle = chalk;
-  styles.forEach((style) => {
+  styles.forEach((style: string) => {
     compositeStyle = compositeStyle[style];
   });
   console.log(compositeStyle(`${prefix}: ${text}`));
@@ -48,25 +48,34 @@ function done() {
   });
 }
 
+function generateformattedPathSegmentsArray(path: string) {
+  return (
+    path
+      // keep first empty string to preserve leading forward slash in path
+      .split("/")
+      .filter((symlinkFileOrDirSegment, index) =>
+        index === 0 ? true : symlinkFileOrDirSegment !== "",
+      )
+  );
+}
+
 async function symlinkConfigs() {
   const consented_config_symlink_filesAndDirs =
     await getConsented_config_symlink_filesAndDirs();
   for (const configFileOrDir in consented_config_symlink_filesAndDirs) {
-    const symlinkFileOrDir = `${
-      consented_config_symlink_filesAndDirs[configFileOrDir]
-    }${configFileOrDir.slice(1)}`;
-    const pathAlreadyExists =
-      await conditionallyCreatePathAlreadyExistsLog(symlinkFileOrDir);
+    const symlinkFileOrDir = generateformattedPathSegmentsArray(
+      `${
+        consented_config_symlink_filesAndDirs[configFileOrDir]
+      }${configFileOrDir.slice(1)}`,
+    ).join("/");
+    const pathAlreadyExists = await checkIfPathAlreadyExists(symlinkFileOrDir);
     if (pathAlreadyExists) {
       continue;
     }
-    await conditionallyCreateDirectoryChainAndAssociatedLogs(symlinkFileOrDir);
-    await createSymlink(configFileOrDir, symlinkFileOrDir);
+    const trimmedSymlinkFileOrDir =
+      await createDirectoryChainIfNotFullyPresent(symlinkFileOrDir);
+    await createSymlink(configFileOrDir, trimmedSymlinkFileOrDir);
   }
-  log({
-    text: "process finished. please check logs for possible errors and warnings",
-    type: logTypes.SUCCESS,
-  });
 }
 
 async function getConsented_config_symlink_filesAndDirs() {
@@ -74,7 +83,7 @@ async function getConsented_config_symlink_filesAndDirs() {
   for (const configFileOrDir in config_symlink_filesAndDirs) {
     let configFileOrDirIsConsented = await question(
       log({
-        text: `symlink ${configFileOrDir} ? (y/n)`,
+        text: `symlink '${configFileOrDir}' ? (y/n)`,
         type: logTypes.QUESTION,
       }),
     );
@@ -98,11 +107,11 @@ async function getConsented_config_symlink_filesAndDirs() {
   return consented_config_symlink_filesAndDirs;
 }
 
-async function conditionallyCreatePathAlreadyExistsLog(symlinkFileOrDir) {
+async function checkIfPathAlreadyExists(symlinkFileOrDir: string) {
   const pathAlreadyExists = await fs.pathExists(symlinkFileOrDir);
   if (pathAlreadyExists) {
     log({
-      text: `${symlinkFileOrDir} already exists`,
+      text: `'${symlinkFileOrDir}' already exists`,
       type: logTypes.ERROR,
     });
   }
@@ -110,29 +119,50 @@ async function conditionallyCreatePathAlreadyExistsLog(symlinkFileOrDir) {
   return pathAlreadyExists;
 }
 
-async function conditionallyCreateDirectoryChainAndAssociatedLogs(
-  symlinkFileOrDir,
-) {
-  const symlinkFileOrDirSegments = symlinkFileOrDir.split("/");
+async function createDirectoryChainIfNotFullyPresent(symlinkFileOrDir: string) {
+  const symlinkFileOrDirSegments =
+    generateformattedPathSegmentsArray(symlinkFileOrDir);
+  const trimmedSymlinkFileOrDir = symlinkFileOrDirSegments.join("/");
   for (let i = -symlinkFileOrDirSegments.length - 1; i <= -1; i++) {
     const currentDirectory = symlinkFileOrDirSegments.slice(0, i).join("/");
     const currentDirectoryExists = await fs.pathExists(currentDirectory);
     if (currentDirectory && !currentDirectoryExists) {
       log({
-        text: `creating ${currentDirectory}`,
+        text: `creating '${currentDirectory}'`,
         type: logTypes.WARN,
       });
-      fs.ensureDir(currentDirectory);
+      await fs.ensureDir(currentDirectory);
       done();
     }
   }
+
+  return trimmedSymlinkFileOrDir;
 }
 
-async function createSymlink(configFileOrDir, symlinkFileOrDir) {
-  log({ text: `linking ${configFileOrDir}`, type: logTypes.PASSIVE });
-  const cwd = await $`pwd`;
-  await $`ln -s ${cwd}${configFileOrDir.slice(1)} ${symlinkFileOrDir}`;
+async function createSymlink(
+  configFileOrDir: string,
+  symlinkFileOrDir: string,
+) {
+  log({ text: `linking '${configFileOrDir}'`, type: logTypes.PASSIVE });
+  const cwd = await $`pwd`.quiet();
+  await $`ln -s ${cwd}${configFileOrDir.slice(1)} ${symlinkFileOrDir}`.quiet();
   done();
 }
 
-await symlinkConfigs();
+symlinkConfigs()
+  .then(() => {
+    log({
+      text: "process finished. please check logs for possible errors and warnings",
+      type: logTypes.SUCCESS,
+    });
+  })
+  .catch((e) => {
+    log({
+      text: e,
+      type: logTypes.ERROR,
+    });
+    log({
+      text: "process could not finish. please check logs for possible errors and warnings",
+      type: logTypes.ERROR,
+    });
+  });

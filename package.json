@@ -1,0 +1,13 @@
+{
+  "name": "configs",
+  "version": "1.0.0",
+  "description": "My configs",
+  "scripts": {
+    "start:install-apt-packages": "tsx install-apt-packages.ts",
+    "start:symlink-configs": "tsx symlink-configs.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
