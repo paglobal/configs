@@ -13,7 +13,7 @@ const config_symlink_filesAndDirs = {
   "./kitty/": $xch,
   "./lxqt/": $xch,
   "./neofetch/": $xch,
-  "./nvim/lua/custom/": $h,
+  "./nvim/lua/custom/": $xch,
   "./openbox/": $xch,
   "./picom/": $xch,
   "./polybar/": $xch,

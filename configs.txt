@@ -4,6 +4,16 @@ THEN INSTALL ALL DEPENDENCIES FOR DOTFILES BOOTSTRAPPING (MAINLY THIS REPO AND G
 THANKS!
 MAYBE USE PNPM INSTEAD OF NVM TO MANAGE NODE VERSIONS INSTEAD THE FUTURE
 
+// sudoers
+/etc/sudoers.d/new
+!!! Important !!!
+PLEASE RUN THE COMMAND BELOW AFTER SYMLINKING SUDOERS FILE 
+pkexec chown root:root /etc/sudoers /etc/sudoers.d -R
+OR DO THE FOLLOWING
+chown -R root:root /etc/sudoers.d
+chmod  755 /etc/sudoers.d 
+chmod  440 /etc/sudoers.d/*
+
 debug adapters
 chrome-debug-adapter
 node-debug-adapter

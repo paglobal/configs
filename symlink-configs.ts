@@ -1,52 +1,6 @@
 import "zx/globals";
-import config_symlink_filesAndDirs from "./config_symlink_files-and-dirs.js";
-
-const logTypes = {
-  ERROR: {
-    prefix: "ERROR",
-    styles: ["red"],
-  },
-  WARN: {
-    prefix: "WARN",
-    styles: ["yellow"],
-  },
-  SUCCESS: {
-    prefix: "SUCCESS",
-    styles: ["green"],
-  },
-  PASSIVE: {
-    prefix: "PASSIVE",
-    styles: ["cyan"],
-  },
-  QUESTION: {
-    prefix: "QUESTION",
-    styles: [],
-  },
-} as const;
-
-type Log = { text: string; type: (typeof logTypes)[keyof typeof logTypes] };
-
-function log(log: Log) {
-  const {
-    text,
-    type: { prefix, styles },
-  } = log;
-  let compositeStyle = chalk;
-  styles.forEach((style: string) => {
-    compositeStyle = compositeStyle[style];
-  });
-  console.log(compositeStyle(`${prefix}: ${text}`));
-
-  // return empty strings for the sake of use with the zx `question` function
-  return "";
-}
-
-function done() {
-  log({
-    text: "done",
-    type: logTypes.SUCCESS,
-  });
-}
+import config_symlink_filesAndDirs from "./config_symlink_files-and-dirs";
+import { logTypes, log, done, runWithLogs } from "./logger";
 
 function generateformattedPathSegmentsArray(path: string) {
   return (
@@ -79,7 +33,7 @@ async function symlinkConfigs() {
 }
 
 async function getConsented_config_symlink_filesAndDirs() {
-  const consented_config_symlink_filesAndDirs = {};
+  const consented_config_symlink_filesAndDirs: Record<string, string> = {};
   for (const configFileOrDir in config_symlink_filesAndDirs) {
     let configFileOrDirIsConsented = await question(
       log({
@@ -145,24 +99,10 @@ async function createSymlink(
 ) {
   log({ text: `linking '${configFileOrDir}'`, type: logTypes.PASSIVE });
   const cwd = await $`pwd`.quiet();
-  await $`ln -s ${cwd}${configFileOrDir.slice(1)} ${symlinkFileOrDir}`.quiet();
+  await $`sudo ln -s ${cwd}${configFileOrDir.slice(
+    1,
+  )} ${symlinkFileOrDir}`.quiet();
   done();
 }
 
-symlinkConfigs()
-  .then(() => {
-    log({
-      text: "process finished. please check logs for possible errors and warnings",
-      type: logTypes.SUCCESS,
-    });
-  })
-  .catch((e) => {
-    log({
-      text: e,
-      type: logTypes.ERROR,
-    });
-    log({
-      text: "process could not finish. please check logs for possible errors and warnings",
-      type: logTypes.ERROR,
-    });
-  });
+runWithLogs(symlinkConfigs);
