@@ -57,11 +57,11 @@
       "commands": ["workbench.view.explorer"]
     },
     {
-      "before": ["<leader>", "g", "f"],
+      "before": ["<leader>", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": ["<leader>", "g", "s"],
+      "before": ["<leader>", "f", "s"],
       "commands": ["workbench.action.gotoSymbol"]
     },
     {
@@ -73,7 +73,7 @@
       "commands": ["workbench.action.showCommands"]
     },
     {
-      "before": ["<leader>", "c", "s"],
+      "before": ["<leader>", "t", "s"],
       "commands": ["workbench.action.selectTheme"]
     },
     {
@@ -97,11 +97,11 @@
       "commands": ["workbench.action.files.newUntitledFile"]
     },
     {
-      "before": ["<leader>", "i", "j"],
+      "before": ["<leader>", "f", "m"],
       "commands": ["editor.action.formatDocument"]
     },
     {
-      "before": ["<leader>", "f", "r"],
+      "before": ["<leader>", "g", "s"],
       "commands": ["editor.action.startFindReplaceAction"]
     },
     {
@@ -115,6 +115,28 @@
     {
       "before": ["<leader>", ","],
       "commands": ["workbench.action.openSettingsJson"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["d"],
+      "after": ["\"", "1", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "1", "D"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "1", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "1", "C"]
+    },
+    {
+      "before": ["P"],
+      "after": ["\"", "1", "p"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -135,6 +157,42 @@
     {
       "before": ["p"],
       "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": ["P"],
+      "after": ["\"", "1", "P"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "1", "d"]
+    },
+    {
+      "before": ["d"],
+      "after": ["\"", "1", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "1", "D"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "1", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "1", "C"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "1", "D"]
+    },
+    {
+      "before": ["c"],
+      "after": ["\"", "1", "c"]
+    },
+    {
+      "before": ["C"],
+      "after": ["\"", "1", "C"]
     }
   ],
   "vim.useSystemClipboard": true,

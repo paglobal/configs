@@ -16,13 +16,14 @@ ripgreg
 fd
 universal ctags
 
-** npm
+** node
 http-server
 typescript
 sass
 vite
 eslint
 prettier
+astro-prettier-plugin
 
 ** nvidia-340
 /usr/share/X11/xorg.conf.d/10-nvidia-brightness.conf
