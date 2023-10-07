@@ -1,0 +1,37 @@
+** debug adapters
+chrome-debug-adapter
+node-debug-adapter
+firefox-debug-adapter
+go-delve
+java-debug-adapter
+
+** fonts
+jetBrainsMono nerd font 
+fira code nerd font
+poppins
+
+** fuzzy finding & misc
+silver surfer
+ripgreg
+fd
+universal ctags
+
+** npm
+http-server
+typescript
+sass
+vite
+eslint
+prettier
+
+** nvidia-340
+/usr/share/X11/xorg.conf.d/10-nvidia-brightness.conf
+
+** shell
+$HOME/.profile
+$HOME/.bashrc
+/etc/.profile
+
+** lxqt
+kvantum
+sddm

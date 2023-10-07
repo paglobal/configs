@@ -1,3 +1,5 @@
+import "zx/globals";
+
 const $h = `${os.homedir()}/`;
 const $xch = `${$h}.config/`;
 
@@ -22,7 +24,6 @@ const config_symlink_filesAndDirs = {
   "./scripts/": $h,
   "./.bashrc": $h,
   "./xorg.conf.d/10-nvidia-brightness.conf": "/usr/share/X11/",
-  "./sudoers.d/new": "/etc/",
 };
 
 export default config_symlink_filesAndDirs;
