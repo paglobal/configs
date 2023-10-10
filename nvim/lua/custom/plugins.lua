@@ -40,6 +40,7 @@ local plugins = {
 			"javascript",
 			"javascriptreact",
 			"json",
+			"jsonc",
 			"markdown",
 			"typescript",
 			"typescriptreact",
@@ -47,6 +48,10 @@ local plugins = {
 		config = function()
 			require("custom.configs.ale")
 		end,
+	},
+	{
+		"tpope/vim-fugitive",
+		lazy = false,
 	},
 }
 

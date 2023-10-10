@@ -15,6 +15,7 @@ vim.cmd([[
   \   'javascript': ['prettier'],
   \   'javascriptreact': ['prettier', 'eslint'],
   \   'json': ['prettier'],
+  \   'jsonc': ['prettier'],
   \   'markdown': ['prettier'],
   \   'typescript': ['prettier'],
   \   'typescriptreact': ['prettier', 'eslint'],
