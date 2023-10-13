@@ -307,5 +307,6 @@
     "union-type",
     "typing-function-parameters",
     "any-type"
-  ]
+  ],
+  "typescript.tsserver.log": "verbose"
 }

@@ -47,7 +47,7 @@ vim.cmd([[xnoremap P "1P]])
 local M = {}
 
 M.ui = {
-	theme = "gruvchad",
+	theme = "ayu_dark",
 	theme_toggle = { "gruvbox", "gruvchad" },
 	telescope = { style = "bordered" },
 	statusline = {
@@ -55,6 +55,11 @@ M.ui = {
 	},
 	nvdash = {
 		load_on_startup = true,
+	},
+	hl_override = {
+		IndentBlanklineContextStart = {
+			bg = "NONE",
+		},
 	},
 }
 
