@@ -171,6 +171,8 @@ export PATH=$PATH:/home/paglobal/go/bin
 export PATH=$PATH:"/home/paglobal/.config/nvm/versions/node/v16.16.0/bin/node"
 export PATH=$PATH:/home/paglobal/.local/bin
 export PATH=$PATH:/home/paglobal/.nvim-app/bin
+export PATH=$PATH:/home/paglobal/.andriod-studio/bin
+export ANDROID_SDK_ROOT="/home/paglobal/Android/Sdk"
 
 # !!******Custom******!!
 #source ~/opt/Xilinx/14.7/ISE_DS/settings64.sh
