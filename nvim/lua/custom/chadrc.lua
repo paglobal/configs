@@ -5,10 +5,12 @@ vim.api.nvim_set_hl(0, "Comment", {
 	bold = true,
 })
 
-vim.cmd([[
-  set foldmethod=expr
-  set foldexpr=nvim_treesitter#foldexpr()
-]])
+-- vim.cmd([[
+--   set foldmethod=expr
+--   set foldexpr=nvim_treesitter#foldexpr()
+--   " Disable folding at startup.
+--   set nofoldenable
+-- ]])
 --
 -- !!! all keybindings set here instead of in `mappings.lua` are done so for convenience sake !!!
 -- !!! KEYBINDINGS START !!!
