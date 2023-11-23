@@ -3,7 +3,7 @@ import { logTypes, log, done, runWithLogs } from "./logger";
 
 async function installAptPackages() {
   let aptPackages: string | string[] = await fs.readFile(
-    "./apt-packages-concise.txt",
+    "./setup-scripts/apt-packages-concise.txt",
     {
       encoding: "utf8",
     },
