@@ -161,7 +161,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "'Fira Code Medium', ubuntu, 'Courier New', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', monospace",
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.hovers.currentLine.over": "line",
   "lit-plugin.htmlTemplateTags": ["h", "html"],
@@ -177,7 +177,6 @@
   },
   "editor.suggest.preview": true,
   "emmet.showSuggestionsAsSnippets": true,
-  "editor.fontSize": 15,
   "editor.fontLigatures": true,
   "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.linkedEditing": true,
