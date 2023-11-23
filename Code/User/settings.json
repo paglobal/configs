@@ -161,7 +161,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.hovers.currentLine.over": "line",
   "lit-plugin.htmlTemplateTags": ["h", "html"],
