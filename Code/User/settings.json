@@ -61,6 +61,10 @@
       "commands": ["workbench.action.quickOpen"]
     },
     {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["workbench.view.search"]
+    },
+    {
       "before": ["<leader>", "f", "s"],
       "commands": ["workbench.action.gotoSymbol"]
     },
@@ -249,5 +253,5 @@
     "typing-function-parameters",
     "any-type"
   ],
-  "typescript.tsserver.log": "verbose"
+  "typescript.tsserver.log": "off"
 }
