@@ -165,7 +165,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+  "editor.fontFamily": "'JetBrains Mono', monospace",
   "diffEditor.ignoreTrimWhitespace": false,
   "gitlens.hovers.currentLine.over": "line",
   "lit-plugin.htmlTemplateTags": ["h", "html"],
@@ -253,5 +253,6 @@
     "typing-function-parameters",
     "any-type"
   ],
-  "typescript.tsserver.log": "off"
+  "typescript.tsserver.log": "off",
+  "terminal.integrated.fontFamily": "monospace"
 }
