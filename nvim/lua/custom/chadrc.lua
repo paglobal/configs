@@ -33,8 +33,8 @@ vim.cmd([[xnoremap p P]])
 local M = {}
 
 M.ui = {
-	theme = "gruvchad",
-	theme_toggle = { "gruvchad", "gruvchad" },
+	theme = "catppuccin",
+	theme_toggle = { "gruvchad", "catppuccin" },
 	telescope = { style = "bordered" },
 	statusline = {
 		theme = "minimal", -- default/vscode/vscode_colored/minimal
