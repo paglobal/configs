@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alacritty &
+kitty &
 sleep 1
 xdotool key v+i+f+m+Return
 
