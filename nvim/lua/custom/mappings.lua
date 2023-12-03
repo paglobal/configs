@@ -31,6 +31,7 @@ M.disabled = {
 		["K"] = "",
 		["<leader>f"] = "",
 		["<leader>q"] = "",
+		["<leader>lf"] = "",
 
 		-- nvim-tree
 		["<C-n>"] = "",
@@ -161,7 +162,7 @@ M.lspconfig = {
 			end,
 			"LSP hover",
 		},
-		["<leader>ds"] = {
+		["<leader>gd"] = {
 			function()
 				vim.diagnostic.setloclist()
 			end,
