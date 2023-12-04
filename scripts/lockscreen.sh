@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #if ! pgrep -x "xautolock" > /dev/null
 #then
   #xautolock -locker  "xtrlock -b" &
