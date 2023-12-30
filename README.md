@@ -22,4 +22,4 @@
 
 - Add option to delete already existing paths when symlinking configs.
 - Provide a more concise `apt-packages.txt` through manual scrutiny.
-- Stop committing `vifminfo.json`
+- Stop committing `vifminfo.json`.
