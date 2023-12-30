@@ -254,5 +254,6 @@
     "any-type"
   ],
   "typescript.tsserver.log": "off",
-  "terminal.integrated.fontFamily": "monospace"
+  "terminal.integrated.fontFamily": "monospace",
+  "git.openRepositoryInParentFolders": "never"
 }

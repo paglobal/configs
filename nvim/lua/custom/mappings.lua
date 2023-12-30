@@ -21,6 +21,7 @@ M.disabled = {
 		["<C-l>"] = "",
 		["<C-j>"] = "",
 		["<C-k>"] = "",
+		["<leader>b"] = "",
 
 		-- tabufline
 		["<tab>"] = "",
@@ -32,6 +33,7 @@ M.disabled = {
 		["<leader>f"] = "",
 		["<leader>q"] = "",
 		["<leader>lf"] = "",
+		["<leader>ca"] = "",
 
 		-- nvim-tree
 		["<C-n>"] = "",
@@ -71,6 +73,8 @@ M.general = {
 	n = {
 		-- quite useful
 		[";"] = { ":", "enter command mode", opts = { nowait = true } },
+		["<leader>bd"] = { "<cmd> %bd|e#|bd#<cr>|'", "Delete all other buffers" },
+		["<leader>nb"] = { "<cmd> enew <CR>", "New buffer" },
 
 		-- switch between windows
 		["<leader>h"] = { "<C-w>h", "Window left" },
@@ -87,8 +91,6 @@ M.general = {
 		["<leader>vs"] = { "<cmd> vsplit <CR>", "Vertical Split" },
 		["<leader>tb"] = { "<cmd> tabnew <CR>", "New tab (with new buffer)" },
 		["<leader>qt"] = { "<cmd> tabclose <CR>", "Close tab" },
-		["<leader>db"] = { "<cmd> cd .. <CR>", "Move back one directory" },
-		["<leader>dd"] = { "<cmd> cd ~/Documents/ <CR>", "Move to Documents directory" },
 		["<Tab>"] = { "<cmd> tabnext <CR>", "Goto next tab" },
 		["<S-Tab>"] = { "<cmd> tabprevious <CR>", "Goto previous tab" },
 		["J"] = { "<cmd> m .+1 <CR>==", "Move line down" },
@@ -167,6 +169,12 @@ M.lspconfig = {
 				vim.diagnostic.setloclist()
 			end,
 			"Diagnostic setloclist",
+		},
+		["<C-.>"] = {
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			"LSP code action",
 		},
 	},
 }
