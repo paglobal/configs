@@ -75,6 +75,7 @@ M.general = {
 		[";"] = { ":", "enter command mode", opts = { nowait = true } },
 		["<leader>bd"] = { "<cmd> %bd|e#|bd#<cr>|'", "Delete all other buffers" },
 		["<leader>bf"] = { "<cmd> enew <CR>", "New buffer" },
+		["<leader>gy"] = { "<cmd> ZenMode <CR>", "Toggle Zen Mode" },
 
 		-- switch between windows
 		["<leader>h"] = { "<C-w>h", "Window left" },

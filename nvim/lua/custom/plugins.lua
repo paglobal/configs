@@ -57,6 +57,13 @@ local plugins = {
 		"mg979/vim-visual-multi",
 		lazy = false,
 	},
+	{
+		"folke/zen-mode.nvim",
+		lazy = false,
+	},
+	{
+		"folke/twilight.nvim",
+	},
 }
 
 return plugins
