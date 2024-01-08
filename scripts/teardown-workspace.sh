@@ -10,9 +10,15 @@
 # wmctrl -ic "$(wmctrl -l | grep 'X - ' | grep -ohE '0x[^[:space:]]{8}')"
 # wmctrl -ic "$(wmctrl -l | grep 'Firefox' | grep -ohE '0x[^[:space:]]{8}')"
 
-processes=$(wmctrl -l)
-while [ "$processes" != "" ]
+# processes=$(wmctrl -l)
+# while [ "$processes" != "" ]
+# do
+#   processes=$(wmctrl -l)
+#   wmctrl -ic "$(wmctrl -l | grep -ohE '0x[^[:space:]]{8}')"
+# done
+
+for i in $(seq 1 10);
 do
-  processes=$(wmctrl -l)
-  wmctrl -ic "$(wmctrl -l | grep -ohE '0x[^[:space:]]{8}')"
+    wmctrl -ic "$(wmctrl -l | grep -ohE '0x[^[:space:]]{8}')"
 done
+

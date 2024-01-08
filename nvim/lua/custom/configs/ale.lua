@@ -6,7 +6,7 @@ vim.cmd([[
   let g:ale_use_neovim_diagnostics_api = 1
   let g:ale_set_highlights = 0
 
-  " Make sure this is always at par with the ALE config in `plugins.lua`.
+  " Make sure this is always at par with the `M` config table down below.
   let g:ale_fixers = {
   \   '*': ['remove_trailing_lines', 'trim_whitespace'],
   \   'astro': ['prettier'],
@@ -21,3 +21,20 @@ vim.cmd([[
   \   'typescriptreact': ['prettier', 'eslint'],
   \}
 ]])
+
+local M = {}
+
+M.ft = {
+	"astro",
+	"css",
+	"html",
+	"javascript",
+	"javascriptreact",
+	"json",
+	"jsonc",
+	"markdown",
+	"typescript",
+	"typescriptreact",
+}
+
+return M

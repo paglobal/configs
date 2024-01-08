@@ -1,0 +1,19 @@
+[window]
+opacity = 0.75
+startup_mode = "Maximized"
+title = "Paul's terminal"
+
+[window.dimensions]
+columns = 200
+lines = 100
+
+[window.padding]
+x = 20
+y = 20
+
+[window.position]
+x = 0
+y = 0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"

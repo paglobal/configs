@@ -33,21 +33,7 @@ local plugins = {
 		-- format & linting
 		-- Make sure this is always at par with the ALE config in `ale.lua`.
 		"dense-analysis/ale",
-		ft = {
-			"astro",
-			"css",
-			"html",
-			"javascript",
-			"javascriptreact",
-			"json",
-			"jsonc",
-			"markdown",
-			"typescript",
-			"typescriptreact",
-		},
-		config = function()
-			require("custom.configs.ale")
-		end,
+		ft = require("custom.configs.ale").ft,
 	},
 	{
 		"tpope/vim-fugitive",
@@ -63,6 +49,13 @@ local plugins = {
 	},
 	{
 		"folke/twilight.nvim",
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		lazy = false,
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
 	},
 }
 

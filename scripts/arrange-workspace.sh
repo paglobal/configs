@@ -1,4 +1,4 @@
-wmctrl -i -r `wmctrl -l | grep 'Spotify Premium'` -t 2
+wmctrl -i -r `wmctrl -l | grep 'Spotify Premium'` -t 1 
 wmctrl -i -r `wmctrl -l | grep 'Gmail'` -t 1
 wmctrl -i -r `wmctrl -l | grep 'Google Keep'` -t 1
 wmctrl -i -r `wmctrl -l | grep 'Discord'` -t 1
