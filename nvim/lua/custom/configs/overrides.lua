@@ -59,6 +59,9 @@ M.treesitter = {
 
 		-- go
 		"go",
+		"gomod",
+		"gosum",
+		"gowork",
 
 		-- c
 		"c",
