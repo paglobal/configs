@@ -33,7 +33,6 @@ M.disabled = {
 		["<leader>f"] = "",
 		["<leader>q"] = "",
 		["<leader>lf"] = "",
-		["<leader>ca"] = "",
 
 		-- nvim-tree
 		["<C-n>"] = "",

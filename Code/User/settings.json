@@ -255,5 +255,6 @@
   ],
   "typescript.tsserver.log": "off",
   "terminal.integrated.fontFamily": "monospace",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.sideBar.location": "right"
 }
