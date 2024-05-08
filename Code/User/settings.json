@@ -182,7 +182,7 @@
   "editor.suggest.preview": true,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.fontLigatures": true,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.colorTheme": "Visual Studio Light",
   "editor.linkedEditing": true,
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
@@ -255,6 +255,5 @@
   ],
   "typescript.tsserver.log": "off",
   "terminal.integrated.fontFamily": "monospace",
-  "git.openRepositoryInParentFolders": "never",
-  "workbench.sideBar.location": "right"
+  "git.openRepositoryInParentFolders": "never"
 }
