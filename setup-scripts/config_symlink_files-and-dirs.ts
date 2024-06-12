@@ -22,7 +22,7 @@ const config_symlink_filesAndDirs = {
   "./rofi/": $xch,
   "./vifm/": $xch,
   "./scripts/": $h,
-  "./.bashrc": $h,
+  // "./.bashrc": $h,
   "./xorg.conf.d/10-nvidia-brightness.conf": "/usr/share/X11/",
 };
 
