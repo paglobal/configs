@@ -23,3 +23,7 @@
 - Add option to delete already existing paths when symlinking configs.
 - Provide a more concise `apt-packages.txt` through manual scrutiny.
 - Stop committing `vifminfo.json`.
+- Add ~/.gitconfig
+- Add lazygit and git-delta installs
+- Document ubuntu custom shortcuts via pictures or anything else
+- Create GUI for this stuff!

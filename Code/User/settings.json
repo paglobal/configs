@@ -154,7 +154,6 @@
     "javascriptreact": "javascriptreact",
     "typescriptreact": "typescriptreact"
   },
-  "editor.formatOnSave": true,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -182,7 +181,7 @@
   "editor.suggest.preview": true,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.fontLigatures": true,
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "Gruvbox Dark Hard",
   "editor.linkedEditing": true,
   "editor.tabCompletion": "on",
   "emmet.triggerExpansionOnTab": true,
@@ -255,5 +254,6 @@
   ],
   "typescript.tsserver.log": "off",
   "terminal.integrated.fontFamily": "monospace",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "editor.formatOnSave": true
 }
