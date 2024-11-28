@@ -119,6 +119,26 @@
     {
       "before": ["<leader>", ","],
       "commands": ["workbench.action.openSettingsJson"]
+    },
+    {
+      "before": ["<leader>", "g", "t"],
+      "commands": ["workbench.view.scm"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
     }
   ],
   "vim.visualModeKeyBindings": [
@@ -171,7 +191,6 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "tslint.jsEnable": true,
   "javascript.suggest.completeFunctionCalls": true,
   "editor.quickSuggestions": {
     "strings": true,
@@ -210,7 +229,6 @@
   "window.commandCenter": true,
   "window.titleBarStyle": "custom",
   "terminal.integrated.shellIntegration.enabled": true,
-  "excalidraw.theme": "auto",
   "svelte.enable-ts-plugin": true,
   "files.associations": {
     "*.css": "tailwindcss"
@@ -228,32 +246,18 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "githubPullRequests.pullBranch": "never",
   "emmet.optimizeStylesheetParsing": false,
   "window.menuBarVisibility": "compact",
   "tailwindCSS.emmetCompletions": true,
   "workbench.editor.enablePreview": false,
   "lit-plugin.rules.no-invalid-css": "off",
-  "github.copilot.enable": {
-    "*": true,
-    "yaml": true,
-    "plaintext": false,
-    "markdown": false
-  },
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "vim.foldfix": true,
-  "totalTypeScript.hiddenTips": [
-    "passing-generics-to-types",
-    "variable-type-annotation",
-    "basic-types",
-    "union-type",
-    "typing-function-parameters",
-    "any-type"
-  ],
   "typescript.tsserver.log": "off",
-  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontFamily": "'JetBrains Mono', monospace",
   "git.openRepositoryInParentFolders": "never",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.sideBar.location": "right"
 }
